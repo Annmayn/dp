@@ -40,6 +40,9 @@ if __name__ == "__main__":
     arr = [14, 7]
 
     def event_handler(signum, stack_frame):
+        print("signum: ",type(signum),  signum)
+        print("="*10)
+        print("stack_frame: ",type(stack_frame), stack_frame)
         raise Exception("Execution took too long (>10 seconds). Skipping!!!")
         
     signal.signal(signal.SIGALRM, event_handler)
