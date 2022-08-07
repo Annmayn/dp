@@ -14,7 +14,7 @@ function bestSum(
         
         if (res !== null) {
             const tmpSoln = [num, ...res];
-            if (soln === null || (soln !== null && soln.length > tmpSoln.length)) soln = tmpSoln;
+            if (soln === null || soln.length > tmpSoln.length) soln = tmpSoln;
         }
     }
     memo[targetSum] = soln;
