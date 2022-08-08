@@ -5,7 +5,7 @@ function canConstruct(
 ): boolean {
     if (target in memo) return memo[target];
     if (target === '') return true;
-    for (const [ind, word] of wordBank.entries()) {
+    for (const word of wordBank) {
         if (target.startsWith(word)) {
             const newTarget = target.slice(word.length);
             if (canConstruct(newTarget, wordBank, memo)) {
