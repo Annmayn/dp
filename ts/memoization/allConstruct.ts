@@ -12,10 +12,7 @@ function allConstruct(
             const newTarget = target.slice(word.length);
             const res = allConstruct(newTarget, wordBank, memo);
             if (res !== null) {
-                const solnArr: string[][] = [];
-                for (const tmpRes of res) {
-                    solnArr.push([word, ...tmpRes]);
-                }
+                const solnArr = res.map(arr => [word, ...arr]);
                 if (solution === null) solution = solnArr;
                 else solution = solution.concat(solnArr);
             }
